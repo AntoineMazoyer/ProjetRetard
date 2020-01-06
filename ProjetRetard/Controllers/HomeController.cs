@@ -26,5 +26,10 @@ namespace ProjetRetard.Controllers
 
             return View();
         }
+
+        public ActionResult Inscription()
+        {
+            return View();
+        }
     }
 }
