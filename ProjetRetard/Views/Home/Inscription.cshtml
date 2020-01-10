@@ -2,17 +2,22 @@
     ViewBag.Title = "Inscription";
 }
 
-<div class="jumbotron">
-    <h1>Inscrivez-vous</h1>
+<div class="titre">
+    <h1 style="margin-bottom:30px;">Inscrivez-vous</h1>
 </div>
 
-<form accept-charset="UTF-8" action="connexion.cshtml" autocomplete="off" method="POST" target="_blank">
-    <label for="firstname">Prénom</label>
-    <input name="firstname" type="text" placeholder="Prénom" />
-    <label for="lastname">Nom</label>
-    <input name="lastname" type="text" placeholder="Nom" />
-    <label for="mail">Adresse électronique</label>
-    <input name="mail" type="text" placeholder="email" />
-    <label for="class">Classe</label>
-    <input name="class" type="text" placeholder="classe" />
+<form accept-charset="UTF-8" action="~/Home/Connexion" autocomplete="off" method="POST" target="_blank">
+    <label for="nom">Nom</label></br>
+    <input name="nom" type="text" style="margin-bottom:30px;" /></br>
+    <label for="prenom">Prénom</label></br>
+    <input name="prenom" type="text" style="margin-bottom:30px;" /></br>
+    <label for="mail">Adresse mail</label></br>
+    <input name="mail" type="text" style="margin-bottom:30px;" /></br>
+    <label for="classe">Classe</label></br>
+    <input name="classe" type="text" style="margin-bottom:30px;" /></br>
+    <label for="motDePasse">Mot de passe</label></br>
+    <input name="motDePasse" type="text" style="margin-bottom:30px;" /></br>
+    <label for="confirmationMotDePasse">Confirmer le mot de passe</label></br>
+    <input name="confirmationMotDePasse" type="text" style="margin-bottom:30px;" /></br>
+    <button type="submit" name="Btn_Inscription">S'inscrire</button>
 </form>

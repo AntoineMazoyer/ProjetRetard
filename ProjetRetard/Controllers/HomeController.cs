@@ -31,5 +31,15 @@ namespace ProjetRetard.Controllers
         {
             return View();
         }
+
+        public ActionResult Connexion()
+        {
+            return View();
+        }
+
+        public ActionResult FormulaireRetard()
+        {
+            return View();
+        }
     }
 }

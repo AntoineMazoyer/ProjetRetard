@@ -18,6 +18,18 @@ namespace ProjetRetard
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Connexion",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Connexion"}
+            );
+
+            routes.MapRoute(
+                name: "FormulaireRetard",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "FormulaireRetard" }
+            );
         }
     }
 }
