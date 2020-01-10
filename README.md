@@ -4,7 +4,7 @@ Application permettant d'ajouter des retards et de les noter en fonction de leur
 
 ## Gestion de compte
 
-* Inscription (Nom, Prénom, Classe, Mot de passe, Email)
+* Inscription (Nom, Prénom, Classe, Email)
 * Connexion (User, Password)
 * Profil (Photo, Informations de l'utilisateur, liste des postes que l'on pourrait classer)
 
