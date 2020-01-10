@@ -1,6 +1,6 @@
 # ProjetRetard
 
-Application permettant d'ajouter des retards et de les noter en fonction de leur importance.
+Application permettant d'ajouter des retards et de les noter en fonction de leur pertinence.
 
 ## Gestion de compte
 
