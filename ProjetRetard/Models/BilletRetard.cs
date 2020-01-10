@@ -23,5 +23,15 @@ namespace ProjetRetard.Models
 
         [Required]
         public int Score { get; set; }
+
+        [Required]
+        public virtual Utilisateur Utilisateur { get; set; }
+
+        public virtual ICollection<Utilisateur> Utilisateurs { get; set; }
+
+        public BilletRetard()
+        {
+            Utilisateurs = new List<Utilisateur>();
+        }
     }
 }
