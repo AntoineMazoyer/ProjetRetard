@@ -15,13 +15,11 @@ namespace ProjetRetard.Models
         [MaxLength(255)]
         public string Motif { get; set; }
 
-        
         public string Justificatif { get; set; }
 
         [Required]
         public DateTime DateHeure { get; set; }
 
-        [Required]
         public int Score { get; set; }
 
         [Required]

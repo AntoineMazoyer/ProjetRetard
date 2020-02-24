@@ -11,17 +11,18 @@ using ProjetRetard.Models;
 
 namespace ProjetRetard.Controllers
 {
-    public class BilletRetardController : Controller
+    public class BilletRetardsController : Controller
     {
         private ProjetRetardContext db = new ProjetRetardContext();
 
-        // GET: BilletRetard
+        // GET: BilletRetards
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.BilletsRetards.ToList());
         }
 
-        // GET: BilletRetard/Details/5
+        // GET: BilletRetards/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,18 +37,18 @@ namespace ProjetRetard.Controllers
             return View(billetRetard);
         }
 
-        // GET: BilletRetard/Create
+        // GET: BilletRetards/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BilletRetard/Create
+        // POST: BilletRetards/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Motif,Justificatif,DateHeure,Score")] BilletRetard billetRetard)
+        public ActionResult Create([Bind(Include = "ID,Motif,Justificatif,DateHeure")] BilletRetard billetRetard)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +60,7 @@ namespace ProjetRetard.Controllers
             return View(billetRetard);
         }
 
-        // GET: BilletRetard/Edit/5
+        // GET: BilletRetards/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,12 +75,12 @@ namespace ProjetRetard.Controllers
             return View(billetRetard);
         }
 
-        // POST: BilletRetard/Edit/5
+        // POST: BilletRetards/Edit/5
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Motif,Justificatif,DateHeure,Score")] BilletRetard billetRetard)
+        public ActionResult Edit([Bind(Include = "ID,Motif,Justificatif,DateHeure")] BilletRetard billetRetard)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +91,7 @@ namespace ProjetRetard.Controllers
             return View(billetRetard);
         }
 
-        // GET: BilletRetard/Delete/5
+        // GET: BilletRetards/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +106,7 @@ namespace ProjetRetard.Controllers
             return View(billetRetard);
         }
 
-        // POST: BilletRetard/Delete/5
+        // POST: BilletRetards/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
