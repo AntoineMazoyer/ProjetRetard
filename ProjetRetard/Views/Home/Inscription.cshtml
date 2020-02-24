@@ -1,23 +1,70 @@
-﻿@{
+﻿@model ProjetRetard.Models.Utilisateur
+
+@{
     ViewBag.Title = "Inscription";
 }
 
-<div class="titre">
-    <h1 style="margin-bottom:30px;">Inscrivez-vous</h1>
+<h2>Veuillez remplir le formulaire</h2>
+
+@using (Html.BeginForm())
+{
+<link href="~/Content/Home.css" rel="stylesheet" />
+    <div class="form-horizontal">
+        <h4>Inscription</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prenom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Prenom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Classe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Classe, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Classe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdresseMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdresseMail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdresseMail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MotDePasse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.MotDePasse, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotDePasse, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="S'inscrire" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Revenir à l'accueil", "Index")
 </div>
 
-<form accept-charset="UTF-8" action="~/Home/Connexion" autocomplete="off" method="POST" target="_blank">
-    <label for="nom">Nom</label></br>
-    <input name="nom" type="text" style="margin-bottom:30px;" /></br>
-    <label for="prenom">Prénom</label></br>
-    <input name="prenom" type="text" style="margin-bottom:30px;" /></br>
-    <label for="mail">Adresse mail</label></br>
-    <input name="mail" type="text" style="margin-bottom:30px;" /></br>
-    <label for="classe">Classe</label></br>
-    <input name="classe" type="text" style="margin-bottom:30px;" /></br>
-    <label for="motDePasse">Mot de passe</label></br>
-    <input name="motDePasse" type="text" style="margin-bottom:30px;" /></br>
-    <label for="confirmationMotDePasse">Confirmer le mot de passe</label></br>
-    <input name="confirmationMotDePasse" type="text" style="margin-bottom:30px;" /></br>
-    <button type="submit" name="Btn_Inscription">S'inscrire</button>
-</form>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
