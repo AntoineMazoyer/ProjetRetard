@@ -52,6 +52,7 @@ namespace ProjetRetard.Controllers
         {
             if (ModelState.IsValid)
             {
+                billetRetard.DateHeure = DateTime.Now;
                 db.BilletsRetards.Add(billetRetard);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -125,5 +126,6 @@ namespace ProjetRetard.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
