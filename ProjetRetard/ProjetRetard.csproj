@@ -124,6 +124,7 @@
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="DAL\ProjetRetardContext.cs" />
     <Compile Include="DAL\ProjetRetardInitializer.cs" />
+    <Compile Include="DAL\UtilisateurDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

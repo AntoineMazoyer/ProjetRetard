@@ -33,15 +33,22 @@ namespace ProjetRetard.Controllers
                 if (string.Compare(HashingPass.Hash(utilisateur.MotDePasse), isValid.MotDePasse) == 0)
                 {
                     /*Méthode qui va générer un ticket d'authentification pour l'utilisateur 
-                    que l'on stocke par la suite dansun cookie pour le rediriger vers la page du site*/
+                    que l'on stocke par la suite dans un cookie pour le rediriger vers la page du site*/
                     var ticket = new FormsAuthenticationTicket(utilisateur.AdresseMail, false, 525600);
                     string encrypt = FormsAuthentication.Encrypt(ticket);
-                    var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypt)
+                    var connexionCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypt)
                     {
                         Expires = DateTime.Now.AddMinutes(5000)
                     };
-                    cookie.HttpOnly = true;
-                    Response.Cookies.Add(cookie);
+                    connexionCookie.HttpOnly = true;
+                    Response.Cookies.Add(connexionCookie);
+
+                    HttpCookie idUserCookie = new HttpCookie("idUserCookie");
+                    string strIdUtilisateur = UtilisateurDAL.getIdUtilisateurFromEmail(utilisateur.AdresseMail).ToString();
+                    idUserCookie.Value = strIdUtilisateur;
+                    idUserCookie.Expires = DateTime.Now.AddHours(1);
+                    idUserCookie.HttpOnly = true;
+                    Response.Cookies.Add(idUserCookie);
 
                     return RedirectToAction("Index", "BilletRetards");
                 }
