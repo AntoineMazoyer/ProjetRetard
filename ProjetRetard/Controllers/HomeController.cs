@@ -42,8 +42,8 @@ namespace ProjetRetard.Controllers
                     };
                     cookie.HttpOnly = true;
                     Response.Cookies.Add(cookie);
-
                     return RedirectToAction("Index", "BilletRetards");
+                    //TEST
                 }
                 else
                 {
