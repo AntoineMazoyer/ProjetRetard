@@ -144,6 +144,10 @@
     <Compile Include="Migrations\202001101516506_RelationUpdate1.designer.cs">
       <DependentUpon>202001101516506_RelationUpdate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002252140466_BDD-propre.cs" />
+    <Compile Include="Migrations\202002252140466_BDD-propre.designer.cs">
+      <DependentUpon>202002252140466_BDD-propre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BilletRetard.cs" />
     <Compile Include="Models\Utilisateur.cs" />
@@ -212,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001101516506_RelationUpdate1.resx">
       <DependentUpon>202001101516506_RelationUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002252140466_BDD-propre.resx">
+      <DependentUpon>202002252140466_BDD-propre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
