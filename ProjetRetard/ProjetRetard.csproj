@@ -147,7 +147,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BilletRetard.cs" />
     <Compile Include="Models\Utilisateur.cs" />
-    <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
