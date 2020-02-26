@@ -2,19 +2,10 @@
 
 @{
     ViewBag.Title = "Liste des retards";
+    Layout = "~/Views/_Navbar.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
     <table class="table">
         <tr>
             <th>
@@ -62,20 +53,7 @@
         }
 
     </table>
-  
-    @if (Request.IsAuthenticated)
-  {
-      using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "btnDeconnexion" }))
-      {
-          <a href="javascript:document.getElementById('btnDeconnexion').submit()">Se déconnecter</a>
-      }
-  }
-  
-</body>
-</html>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <p>
+        @Html.ActionLink("Créer un nouveau retard", "Create")
+    </p>
 

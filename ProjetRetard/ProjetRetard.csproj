@@ -174,15 +174,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Inscription.cshtml" />
-    <Content Include="Views\Utilisateur\Delete.cshtml" />
-    <Content Include="Views\Utilisateur\Details.cshtml" />
+    <Content Include="Views\Utilisateur\Detail.cshtml" />
     <Content Include="Views\Utilisateur\Edit.cshtml" />
-    <Content Include="Views\Utilisateur\Index.cshtml" />
     <Content Include="Views\BilletRetards\Create.cshtml" />
     <Content Include="Views\BilletRetards\Delete.cshtml" />
-    <Content Include="Views\BilletRetards\Details.cshtml" />
     <Content Include="Views\BilletRetards\Edit.cshtml" />
     <Content Include="Views\BilletRetards\Index.cshtml" />
+    <Content Include="Views\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

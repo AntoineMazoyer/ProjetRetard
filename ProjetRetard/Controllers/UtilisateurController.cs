@@ -21,8 +21,8 @@ namespace ProjetRetard.Controllers
             return View(db.Utilisateurs.ToList());
         }
 
-        // GET: Utilisateur/Details/5
-        public ActionResult Details(int? id)
+        // GET: Utilisateur/Detail/5
+        public ActionResult Detail(int? id)
         {
             if (id == null)
             {

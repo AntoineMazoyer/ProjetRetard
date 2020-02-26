@@ -28,7 +28,7 @@ namespace ProjetRetard.Controllers
         public ActionResult Deconnexion()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return View("Index", "Home");
         }
 
         // GET: BilletRetards/Details/5
