@@ -48,20 +48,21 @@ namespace ProjetRetard.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Motif,Justificatif,DateHeure")] BilletRetard billetRetard)
+        public ActionResult Create([Bind(Include = "Motif,Justificatif")] BilletRetard billetRetard)
         {
-            if (ModelState.IsValid)
+            DateTime defaultDateTime = DateTime.Now;
+            int defautScore = 0;
+            int idUtilisateurCourant = Int32.Parse(Request.Cookies["idUtilisateurCookie"]["idUtilisateur"]);
+            BilletDAL.insertBilletRetard(billetRetard.Motif, billetRetard.Justificatif, defaultDateTime, defautScore, idUtilisateurCourant);
+            return RedirectToAction("Index", "BilletRetards");
+            /*if (ModelState.IsValid)
             {
-                billetRetard.DateHeure = DateTime.Now;
-                billetRetard.Score = 0;
-                int idUtilisateur = Int32.Parse(Request.Cookies["CookieConnexion"].Value);
-                billetRetard.Utilisateur = UtilisateurDAL.getUtilisateurFromId(idUtilisateur);
                 db.BilletsRetards.Add(billetRetard);
                 db.SaveChanges();
                 return RedirectToAction("Index", "BilletRetards");
-            }
+            }*/
 
-            return View(billetRetard);
+            //return View(billetRetard);
         }
 
         // GET: BilletRetards/Edit/5

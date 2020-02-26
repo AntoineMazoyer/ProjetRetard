@@ -36,12 +36,5 @@ namespace ProjetRetard.Models
         [DataType(DataType.Password)]
         [Display(Name = "Mot de passe")]
         public string MotDePasse { get; set; }
-
-        public virtual ICollection<BilletRetard> BilletsRetards { get; set; }
-
-        public Utilisateur()
-        {
-            BilletsRetards = new List<BilletRetard>();
-        }
     }
 }
