@@ -1,6 +1,8 @@
 ﻿@model ProjetRetard.Models.BilletRetard
+
 @{
-    ViewBag.Title = "Création de billet de retard";
+    ViewBag.Title = "Création du retard";
+    Layout = "~/Views/_Navbar.cshtml";
 }
 
 
@@ -34,15 +36,7 @@
                     <input type="submit" value="Créer un retard" class="btn btn-default" />
                 </div>
             </div>
-        </div>
-    </div>
-}
-
+    }
 <div>
     @Html.ActionLink("Retourner à la liste des retards", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-}

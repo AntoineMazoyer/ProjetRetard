@@ -1,13 +1,12 @@
 ﻿@model ProjetRetard.Models.Utilisateur
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/_Navbar.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Utilisateur</h4>
+    <h4>Mon profil</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,17 +41,10 @@
             @Html.DisplayFor(model => model.AdresseMail)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MotDePasse)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MotDePasse)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifier mon profil", "Edit", new { id = Model.ID })
+    <br />
+    @Html.ActionLink("Annuler la modification", "Index", "BilletRetards")
 </p>

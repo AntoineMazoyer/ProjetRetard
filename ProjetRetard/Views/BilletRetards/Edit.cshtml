@@ -1,17 +1,10 @@
 ﻿@model ProjetRetard.Models.BilletRetard
 
 @{
-    Layout = null;
+    ViewBag.Title = "Editer un retard";
+    Layout = "~/Views/_Navbar.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     
@@ -60,14 +53,12 @@
     
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Modifier" class="btn btn-default" />
                 </div>
             </div>
         </div>
     }
     
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Retourner à la liste des retards", "Index")
     </div>
-</body>
-</html>
