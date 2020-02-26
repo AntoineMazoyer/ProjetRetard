@@ -8,6 +8,7 @@ namespace ProjetRetard
 {
     public static class HashingPass
     {
+        //Fonction qui permet de nous retourner un mot de passe crypté, inséré ensuite en BDD
         public static string Hash(string value)
         {
             return Convert.ToBase64String(
