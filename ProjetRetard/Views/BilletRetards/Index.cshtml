@@ -5,47 +5,27 @@
     ViewBag.Title = "Liste des retards";
 }
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Motif)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Justificatif)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateHeure)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Score)
-            </th>
-            <th></th>
-        </tr>
+<link href="~/Content/listeRetard.css" rel="stylesheet" />
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Motif)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Justificatif)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateHeure)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Score)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
-        }
+@foreach (var item in Model)
+{
+    <div class="card bg-light" style="width: 30rem;">
+        <div class="card-body">
+            <h5>Motif du retard :</h5>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Motif)</p>
+            <p><span class="glyphicon glyphicon-asterisk"></span></p>
+            <p class="text-right">@Html.DisplayFor(modelItem => item.Score)</p>
+            <p class="glyphicon glyphicon-align-left" aria-hidden="true"></p>
+            <h6>Justificatif :</h6>
+            <p>@Html.DisplayFor(modelItem => item.Justificatif)</p>
+            <p class="text-right">Date de création : @Html.DisplayFor(modelItem => item.DateHeure)</p>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </div>
+    </div>
+}
 
-    </table>
-    <p>
-        @Html.ActionLink("Créer un nouveau retard", "Create")
-    </p>
+<p>
+    @Html.ActionLink("Créer un nouveau retard", "Create")
+</p>
 
