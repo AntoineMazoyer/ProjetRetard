@@ -24,7 +24,5 @@ namespace ProjetRetard.Models
 
         [Required]
         public virtual Utilisateur Utilisateur { get; set; }
-
-        //OUAIS ça marche la fusion
     }
 }
