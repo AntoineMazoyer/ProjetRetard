@@ -124,25 +124,14 @@
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="DAL\ProjetRetardContext.cs" />
     <Compile Include="DAL\ProjetRetardInitializer.cs" />
+    <Compile Include="DAL\UtilisateurDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HashingPass.cs" />
-    <Compile Include="Migrations\202001101052297_Initialisation.cs" />
-    <Compile Include="Migrations\202001101052297_Initialisation.designer.cs">
-      <DependentUpon>202001101052297_Initialisation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001101457494_RelationTable.cs" />
-    <Compile Include="Migrations\202001101457494_RelationTable.designer.cs">
-      <DependentUpon>202001101457494_RelationTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001101514214_RelationUpdate.cs" />
-    <Compile Include="Migrations\202001101514214_RelationUpdate.designer.cs">
-      <DependentUpon>202001101514214_RelationUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001101516506_RelationUpdate1.cs" />
-    <Compile Include="Migrations\202001101516506_RelationUpdate1.designer.cs">
-      <DependentUpon>202001101516506_RelationUpdate1.cs</DependentUpon>
+    <Compile Include="Migrations\202002251625060_Initialisation.cs" />
+    <Compile Include="Migrations\202002251625060_Initialisation.designer.cs">
+      <DependentUpon>202002251625060_Initialisation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202002252140466_BDD-propre.cs" />
     <Compile Include="Migrations\202002252140466_BDD-propre.designer.cs">
@@ -151,7 +140,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BilletRetard.cs" />
     <Compile Include="Models\Utilisateur.cs" />
-    <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,17 +194,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001101052297_Initialisation.resx">
-      <DependentUpon>202001101052297_Initialisation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001101457494_RelationTable.resx">
-      <DependentUpon>202001101457494_RelationTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001101514214_RelationUpdate.resx">
-      <DependentUpon>202001101514214_RelationUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001101516506_RelationUpdate1.resx">
-      <DependentUpon>202001101516506_RelationUpdate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002251625060_Initialisation.resx">
+      <DependentUpon>202002251625060_Initialisation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002252140466_BDD-propre.resx">
       <DependentUpon>202002252140466_BDD-propre.cs</DependentUpon>

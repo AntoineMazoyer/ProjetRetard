@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProjetRetard.Models.BilletRetard>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Liste des retards";
 }
 
 <!DOCTYPE html>
@@ -56,13 +56,20 @@
         }
 
     </table>
+  
+    @if (Request.IsAuthenticated)
+  {
+      using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "btnDeconnexion" }))
+      {
+          <a href="javascript:document.getElementById('btnDeconnexion').submit()">Se déconnecter</a>
+      }
+  }
+  
 </body>
 </html>
 
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "btnDeconnexion" }))
-    {
-        <a href="javascript:document.getElementById('btnDeconnexion').submit()">Se déconnecter</a>
-    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 }
+

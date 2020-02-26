@@ -61,9 +61,13 @@ namespace ProjetRetard.Controllers
         {
             if (ModelState.IsValid)
             {
+                billetRetard.DateHeure = DateTime.Now;
+                billetRetard.Score = 0;
+                int idUtilisateur = Int32.Parse(Request.Cookies["CookieConnexion"].Value);
+                billetRetard.Utilisateur = UtilisateurDAL.getUtilisateurFromId(idUtilisateur);
                 db.BilletsRetards.Add(billetRetard);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "BilletRetards");
             }
 
             return View(billetRetard);
@@ -134,5 +138,6 @@ namespace ProjetRetard.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

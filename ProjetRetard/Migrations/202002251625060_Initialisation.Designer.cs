@@ -7,13 +7,13 @@ namespace ProjetRetard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class RelationUpdate : IMigrationMetadata
+    public sealed partial class Initialisation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RelationUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialisation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001101514214_RelationUpdate"; }
+            get { return "202002251625060_Initialisation"; }
         }
         
         string IMigrationMetadata.Source

@@ -24,7 +24,7 @@ namespace ProjetRetard.Controllers
         [HttpPost]
         public ActionResult Index(Utilisateur utilisateur)
         {
-            //On cré une variable "isValid" qui permet de savoir si un utilisateur possède une adresse mail valide sur notre site
+            //On crée une variable "isValid" qui permet de savoir si un utilisateur possède une adresse mail valide sur notre site
             var isValid = db.Utilisateurs.Where(am => am.AdresseMail == utilisateur.AdresseMail).FirstOrDefault();
             //Si on a bien une adresse mail
             if (isValid != null)
@@ -33,15 +33,25 @@ namespace ProjetRetard.Controllers
                 if (string.Compare(HashingPass.Hash(utilisateur.MotDePasse), isValid.MotDePasse) == 0)
                 {
                     /*Méthode qui va générer un ticket d'authentification pour l'utilisateur 
-                    que l'on stocke par la suite dansun cookie pour le rediriger vers la page du site*/
+                    que l'on stocke par la suite dans un cookie pour le rediriger vers la page du site*/
                     var ticket = new FormsAuthenticationTicket(utilisateur.AdresseMail, false, 525600);
                     string encrypt = FormsAuthentication.Encrypt(ticket);
-                    var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypt)
+                    var connexionCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypt)
                     {
                         Expires = DateTime.Now.AddMinutes(5000)
                     };
-                    cookie.HttpOnly = true;
-                    Response.Cookies.Add(cookie);
+                    
+                    connexionCookie.HttpOnly = true;
+                    Response.Cookies.Add(connexionCookie);
+
+                    HttpCookie idUserCookie = new HttpCookie("idUserCookie");
+                    string strIdUtilisateur = UtilisateurDAL.getIdUtilisateurFromEmail(utilisateur.AdresseMail).ToString();
+                    idUserCookie.Value = strIdUtilisateur;
+                    idUserCookie.Expires = DateTime.Now.AddHours(1);
+                    idUserCookie.HttpOnly = true;
+                    Response.Cookies.Add(idUserCookie);
+
+
                     return RedirectToAction("Index", "BilletRetards");
                     //TEST
                 }

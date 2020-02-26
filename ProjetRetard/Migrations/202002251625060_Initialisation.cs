@@ -16,10 +16,10 @@
                         Justificatif = c.String(),
                         DateHeure = c.DateTime(nullable: false),
                         Score = c.Int(nullable: false),
-                        Utilisateur_ID = c.Int(),
+                        Utilisateur_ID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Utilisateur", t => t.Utilisateur_ID)
+                .ForeignKey("dbo.Utilisateur", t => t.Utilisateur_ID, cascadeDelete: true)
                 .Index(t => t.Utilisateur_ID);
             
             CreateTable(
