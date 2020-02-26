@@ -1,5 +1,5 @@
 # Alabour
-Wilfried MONTAGNE - Antoine MAZOYER - B3 Classe 2
+Wilfried MONTAGNE - Antoine MAZOYER - B3 Classe 2  
 Application permettant de créer et visualiser des billets de retard.
 
 ## Installation
