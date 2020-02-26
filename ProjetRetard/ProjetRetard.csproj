@@ -122,7 +122,6 @@
     <Compile Include="Controllers\BilletRetardsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
-    <Compile Include="DAL\BilletDAL.cs" />
     <Compile Include="DAL\ProjetRetardContext.cs" />
     <Compile Include="DAL\ProjetRetardInitializer.cs" />
     <Compile Include="DAL\UtilisateurDAL.cs" />
