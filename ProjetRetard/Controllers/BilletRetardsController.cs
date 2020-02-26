@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using ProjetRetard.DAL;
 using ProjetRetard.Models;
 
@@ -20,6 +21,14 @@ namespace ProjetRetard.Controllers
         public ActionResult Index()
         {
             return View(db.BilletsRetards.ToList());
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Deconnexion()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: BilletRetards/Details/5

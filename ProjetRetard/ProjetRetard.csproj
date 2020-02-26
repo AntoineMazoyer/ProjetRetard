@@ -134,6 +134,10 @@
     <Compile Include="Migrations\202002251625060_Initialisation.designer.cs">
       <DependentUpon>202002251625060_Initialisation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002252140466_BDD-propre.cs" />
+    <Compile Include="Migrations\202002252140466_BDD-propre.designer.cs">
+      <DependentUpon>202002252140466_BDD-propre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BilletRetard.cs" />
     <Compile Include="Models\Utilisateur.cs" />
@@ -145,6 +149,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\inscription.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -192,6 +197,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002251625060_Initialisation.resx">
       <DependentUpon>202002251625060_Initialisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002252140466_BDD-propre.resx">
+      <DependentUpon>202002252140466_BDD-propre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

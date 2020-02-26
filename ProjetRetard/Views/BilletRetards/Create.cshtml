@@ -1,8 +1,8 @@
 ﻿@model ProjetRetard.Models.BilletRetard
-
 @{
     ViewBag.Title = "Création de billet de retard";
 }
+
 
     @using (Html.BeginForm())
     {
@@ -19,14 +19,15 @@
                     @Html.ValidationMessageFor(model => model.Motif, "", new { @class = "text-danger" })
                 </div>
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Justificatif, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Justificatif, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Justificatif, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Justificatif, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Justificatif, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Justificatif, "", new { @class = "text-danger" })
             </div>
+        </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -34,13 +35,14 @@
                 </div>
             </div>
         </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
+}
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+<div>
+    @Html.ActionLink("Retourner à la liste des retards", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}
