@@ -20,29 +20,36 @@
             <th>
                 @Html.DisplayNameFor(model => model.Score)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur.Nom)
+                @Html.DisplayNameFor(model => model.Utilisateur.Prenom)
+            </th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Motif)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Justificatif)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateHeure)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Score)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Justificatif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateHeure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utilisateur.Nom)
+            @Html.DisplayFor(modelItem => item.Utilisateur.Prenom)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    </tr>
         }
 
     </table>
