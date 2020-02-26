@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="navbar container navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Projet Retard</a>
+        <a class="navbar-brand" href="#">Alabour</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,7 +33,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="~/Utilisateur/Detail/@Request.Cookies["idUtilisateurCookie"]["idUtilisateur"]">Mon compte</a>
-                        <a class="dropdown-item" href="#">Mes retards</a>
                         <div class="dropdown-divider"></div>
                         @if (Request.IsAuthenticated)
                         {

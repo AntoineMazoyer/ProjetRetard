@@ -9,20 +9,20 @@
 
 @foreach (var item in Model)
 {
-    <div class="card bg-light" style="width: 30rem;">
-        <div class="card-body">
-            <h5>Motif du retard :</h5>
-            <p class="card-text">@Html.DisplayFor(modelItem => item.Motif)</p>
-            <p><span class="glyphicon glyphicon-asterisk"></span></p>
-            <p class="text-right">@Html.DisplayFor(modelItem => item.Score)</p>
-            <p class="glyphicon glyphicon-align-left" aria-hidden="true"></p>
-            <h6>Justificatif :</h6>
-            <p>@Html.DisplayFor(modelItem => item.Justificatif)</p>
-            <p class="text-right">Date de création : @Html.DisplayFor(modelItem => item.DateHeure)</p>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-        </div>
+<div class="card bg-light" style="width: 30rem;">
+    <div class="card-body">
+        <h5>Motif du retard :</h5>
+        <p class="card-text">@Html.DisplayFor(modelItem => item.Motif)</p>
+        <p><span class="glyphicon glyphicon-asterisk"></span></p>
+        <p class="text-right">@Html.DisplayFor(modelItem => item.Score) Points</p>
+        <p class="glyphicon glyphicon-align-left" aria-hidden="true"></p>
+        <h6>Justificatif :</h6>
+        <p>@Html.DisplayFor(modelItem => item.Justificatif)</p>
+        <p class="text-right">Date de création : @Html.DisplayFor(modelItem => item.DateHeure)</p>
+        <hr />
+        <p> @Html.DisplayFor(modelItem => item.Utilisateur.Prenom) @Html.DisplayFor(modelItem => item.Utilisateur.Nom) | @Html.DisplayFor(modelItem => item.Utilisateur.Classe)</p>
     </div>
+</div>
 }
 
 <p>

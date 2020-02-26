@@ -34,7 +34,7 @@ namespace ProjetRetard.Controllers
                 {
                     /*Méthode qui va générer un ticket d'authentification pour l'utilisateur 
                     que l'on stocke par la suite dans un cookie pour le rediriger vers la page du site*/
-                    var ticket = new FormsAuthenticationTicket(utilisateur.AdresseMail, false, 525600);
+                    var ticket = new FormsAuthenticationTicket("connexionCookie", false, 525600);
                     string encrypt = FormsAuthentication.Encrypt(ticket);
                     var connexionCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypt)
                     {
@@ -47,7 +47,7 @@ namespace ProjetRetard.Controllers
                     HttpCookie idUserCookie = new HttpCookie("idUtilisateurCookie");
                     string strIdUtilisateur = UtilisateurDAL.getIdUtilisateurFromEmail(utilisateur.AdresseMail).ToString();
                     idUserCookie.Value = strIdUtilisateur;
-                    idUserCookie.Expires = DateTime.Now.AddHours(1);
+                    idUserCookie.Expires = DateTime.Now.AddMinutes(5000);
                     idUserCookie.HttpOnly = true;
                     Response.Cookies.Add(idUserCookie);
 
