@@ -56,6 +56,15 @@
         }
 
     </table>
+  
+    @if (Request.IsAuthenticated)
+  {
+      using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "btnDeconnexion" }))
+      {
+          <a href="javascript:document.getElementById('btnDeconnexion').submit()">Se déconnecter</a>
+      }
+  }
+  
 </body>
 </html>
 
@@ -63,3 +72,4 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 }
+

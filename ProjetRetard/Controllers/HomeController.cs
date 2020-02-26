@@ -24,7 +24,7 @@ namespace ProjetRetard.Controllers
         [HttpPost]
         public ActionResult Index(Utilisateur utilisateur)
         {
-            //On cré une variable "isValid" qui permet de savoir si un utilisateur possède une adresse mail valide sur notre site
+            //On crée une variable "isValid" qui permet de savoir si un utilisateur possède une adresse mail valide sur notre site
             var isValid = db.Utilisateurs.Where(am => am.AdresseMail == utilisateur.AdresseMail).FirstOrDefault();
             //Si on a bien une adresse mail
             if (isValid != null)
@@ -40,6 +40,7 @@ namespace ProjetRetard.Controllers
                     {
                         Expires = DateTime.Now.AddMinutes(5000)
                     };
+                    
                     connexionCookie.HttpOnly = true;
                     Response.Cookies.Add(connexionCookie);
 
@@ -50,7 +51,9 @@ namespace ProjetRetard.Controllers
                     idUserCookie.HttpOnly = true;
                     Response.Cookies.Add(idUserCookie);
 
+
                     return RedirectToAction("Index", "BilletRetards");
+                    //TEST
                 }
                 else
                 {
