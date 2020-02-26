@@ -46,7 +46,7 @@ namespace ProjetRetard.Controllers
 
                     HttpCookie idUserCookie = new HttpCookie("idUtilisateurCookie");
                     string strIdUtilisateur = UtilisateurDAL.getIdUtilisateurFromEmail(utilisateur.AdresseMail).ToString();
-                    idUserCookie.Value = strIdUtilisateur;
+                    idUserCookie.Values.Set("idUtilisateur", strIdUtilisateur);
                     idUserCookie.Expires = DateTime.Now.AddMinutes(5000);
                     idUserCookie.HttpOnly = true;
                     Response.Cookies.Add(idUserCookie);
