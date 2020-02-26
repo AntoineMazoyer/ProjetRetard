@@ -17,7 +17,7 @@ Application permettant de créer et visualiser des billets de retard.
 * Prénom (Automatique)
 * Classe (Automatique)
 * Motif du retard (A renseigner par l'utilisateur)
-* Justif du retard (A renseigner par l'utilisateur)
+* Justif du retard (A renseigner par l'utilisateur ou laisser vide)
 * Date + heure (Automatique)
 
 
