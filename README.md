@@ -1,27 +1,23 @@
 # ProjetRetard
 
-Application permettant d'ajouter des retards et de les noter en fonction de leur pertinence.
+Application permettant de créer et visualiser des billets de retard.
+
+## Installation
+* La base de données est fournie avec des informations déjà présentes (comptes utilisateurs et billets de retard. Les mots de passe des utilisateurs déjà présents sont "123456789" sans les guillemets).
+* Ne pas oublier de changer la connexionString dans le fichier Web.config.
 
 ## Gestion de compte
 
 * Inscription (Nom, Prénom, Classe, Email)
 * Connexion (User, Password)
-* Profil (Photo, Informations de l'utilisateur, liste des postes que l'on pourrait classer)
+* Profil (Informations de l'utilisateur).
 
 ## Formulaire pour ajouter un retard
-* Nom
-* Prénom
-* Classe
-* Motif du retard
-* Justif du retard
-* Date + heure
+* Nom (Automatique)
+* Prénom (Automatique)
+* Classe (Automatique)
+* Motif du retard (A renseigner par l'utilisateur)
+* Justif du retard (A renseigner par l'utilisateur)
+* Date + heure (Automatique)
 
-## Vote des retards
-* Pouce vert
-* Pouce rouge
-* Commentaires
 
-## Classement des retards
-* Retards / an
-* Retards / mois
-* Retards / semaine
