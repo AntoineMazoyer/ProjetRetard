@@ -44,7 +44,7 @@ namespace ProjetRetard.Controllers
                     connexionCookie.HttpOnly = true;
                     Response.Cookies.Add(connexionCookie);
 
-                    HttpCookie idUserCookie = new HttpCookie("idUserCookie");
+                    HttpCookie idUserCookie = new HttpCookie("idUtilisateurCookie");
                     string strIdUtilisateur = UtilisateurDAL.getIdUtilisateurFromEmail(utilisateur.AdresseMail).ToString();
                     idUserCookie.Value = strIdUtilisateur;
                     idUserCookie.Expires = DateTime.Now.AddHours(1);

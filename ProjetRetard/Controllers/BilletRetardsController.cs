@@ -28,7 +28,11 @@ namespace ProjetRetard.Controllers
         public ActionResult Deconnexion()
         {
             FormsAuthentication.SignOut();
-            return View("Index", "Home");
+            if (Request.Cookies["idUtilisateurCookie"] != null)
+            {
+                Response.Cookies["idUtilisateurCookie"].Expires = DateTime.Now.AddDays(-1);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: BilletRetards/Details/5

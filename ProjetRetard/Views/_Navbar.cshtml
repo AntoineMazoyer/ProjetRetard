@@ -32,12 +32,15 @@
                         Profil
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="~/Utilisateur/Detail/@Request.Cookies["idUtilisateurCookie"]["idUtilisateur"])">Mon compte</a>
+                        <a class="dropdown-item" href="~/Utilisateur/Detail/@Request.Cookies["idUtilisateurCookie"]["idUtilisateur"]">Mon compte</a>
                         <a class="dropdown-item" href="#">Mes retards</a>
                         <div class="dropdown-divider"></div>
                         @if (Request.IsAuthenticated)
                         {
-                            @Html.ActionLink("Se déconnecter", "Deconnexion")
+                            using (Html.BeginForm("Deconnexion", "BilletRetards", FormMethod.Post, new { id="logoutForm"}))
+                            {
+                                <a href="javascript:document.getElementById('logoutForm').submit()">Deconnexion</a>
+                            }
                         }
                     </div>
                 </li>
